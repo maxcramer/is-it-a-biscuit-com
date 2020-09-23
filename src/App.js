@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 import logo from './logo.svg';
 import './App.css';
+import SearchBar from '../src/components/SearchBar/SearchBar';
 
-function App() {
-  return (
-    <div className="App">
-      <h2>Getting Online Hosting</h2>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <Route path="/"  component={SearchBar}/>
+      </Router>
+    )
+  }
 }
-
 export default App;

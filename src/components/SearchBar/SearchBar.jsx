@@ -7,7 +7,7 @@ function SearchBar() {
 
     const filterResults = () => {
         const searchTerm = searchInput.current.value;
-        const biscuit = 
+        // const biscuit = 
     }
 
     useEffect(() => {
