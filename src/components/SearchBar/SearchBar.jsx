@@ -1,7 +1,7 @@
 import React, { useState, useEffect, createRef } from 'react';
 import { Link } from 'react-router-dom';
 
-import {getBiscuits} from '../../services/firestoreService';
+import { getBiscuits } from '../../services/firestoreService';
 
 function SearchBar() {
     const [biscuits, setBiscuits] = useState([]);
@@ -11,8 +11,9 @@ function SearchBar() {
     const filterResults = () => {
         const searchTerm = searchInput.current.value;
         const biscuitResults = biscuits.filter(biscuit => biscuit.name.toLowerCase().includes(searchTerm.toLowerCase()));
-        setResults([biscuitResults]);
-        console.log(biscuitResults);
+        console.log('this is the biscuit results', biscuitResults);
+        setResults([...biscuitResults]);
+        console.log('this is results', results)
     }
 
     useEffect(() => {
@@ -28,8 +29,7 @@ function SearchBar() {
         }
         loadData();
         setResults([]);
-    }, [])
-
+    }, []);
     return (
         <div>
             <input 
@@ -40,17 +40,18 @@ function SearchBar() {
             />
             <div>
                 <ul>
-                    {
-                        biscuits.map(biscuit => (
-                            <li key={biscuit._id}>
-                                {biscuit.name}
+                    {results.map(result => (
+                            <li key={result._id}>
+                                <Link>
+                                    {result.name}    
+                                </Link>
                             </li>
                         ))
                     }
                 </ul>
             </div>
         </div>
-    )
+    );
 
 }
 
