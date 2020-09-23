@@ -29,4 +29,4 @@ export const getBiscuits = async () => {
         }
     })
     return biscuits
-}
+};
