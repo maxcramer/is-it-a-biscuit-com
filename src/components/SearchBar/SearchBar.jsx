@@ -16,6 +16,11 @@ function SearchBar() {
         console.log('this is results', results)
     }
 
+    const onResultClick = () => {
+        setResults([]);
+        searchInput.current.value = '';
+    }
+
     useEffect(() => {
 
         const fetchBiscuits = async () => {
@@ -42,7 +47,7 @@ function SearchBar() {
                 <ul>
                     {results.map(result => (
                             <li key={result._id}>
-                                <Link>
+                                <Link onClick={onResultClick}>
                                     {result.name}    
                                 </Link>
                             </li>
