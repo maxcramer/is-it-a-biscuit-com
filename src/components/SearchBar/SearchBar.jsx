@@ -1,9 +1,10 @@
 import React, { useState, useEffect, createRef } from 'react';
+import { Link } from 'react-router-dom';
 
 import {getBiscuits} from '../../services/firestoreService';
 
 function SearchBar() {
-    const [biscuits, setBiscuit] = useState([]);
+    const [biscuits, setBiscuits] = useState([]);
     const [results, setResults] = useState([]);
     const searchInput = createRef();
 
@@ -18,7 +19,7 @@ function SearchBar() {
 
         const fetchBiscuits = async () => {
             const biscuitResponse = await getBiscuits();
-            setBiscuit(biscuitResponse);
+            setBiscuits(biscuitResponse);
         }
 
         const loadData = async () => {
@@ -27,7 +28,6 @@ function SearchBar() {
         }
         loadData();
         setResults([]);
-
     }, [])
 
     return (
@@ -38,6 +38,17 @@ function SearchBar() {
                 ref={searchInput}
                 onChange={filterResults}
             />
+            <div>
+                <ul>
+                    {
+                        biscuits.map(biscuit => (
+                            <li key={biscuit._id}>
+                                {biscuit.name}
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
         </div>
     )
 

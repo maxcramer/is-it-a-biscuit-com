@@ -21,6 +21,7 @@ const db = firebase.firestore();
 export const getBiscuits = async () => {
     const {docs} = await db
     .collection('biscuits')
+    // .orderBy('name', 'desc')
     .get();
     const biscuits = docs.map(doc => {
         return {
