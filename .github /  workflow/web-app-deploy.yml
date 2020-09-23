@@ -1,0 +1,44 @@
+name: web-app-deploy
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'web-app/**'
+
+
+jobs:
+
+  build-and-deploy:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x]
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+
+    - name: Build project
+      run: |
+        cd web-app
+        npm install
+        npm run build
+      env:
+        CI: "" #this is needed for the build to pass if there are warnings but no errors
+
+    - name: Deploy to Firebase
+      uses: w9jds/firebase-action@master
+      with:
+        args: deploy --only hosting
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }},
+        PROJECT_PATH: 'web-app'
