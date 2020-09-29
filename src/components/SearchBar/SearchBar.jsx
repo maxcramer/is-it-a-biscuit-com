@@ -13,7 +13,6 @@ function SearchBar() {
         const biscuitResults = biscuits.filter(biscuit => biscuit.name.toLowerCase().includes(searchTerm.toLowerCase()));
         console.log('this is the biscuit results', biscuitResults);
         setResults([...biscuitResults]);
-        console.log('this is results', results)
     }
 
     const onResultClick = () => {
@@ -47,12 +46,16 @@ function SearchBar() {
                 <ul>
                     {results.map(result => (
                             <li key={result._id}>
-                                <Link onClick={onResultClick}>
+                                <Link 
+                                onClick={onResultClick} 
+                                to={`biscuits/${result._id}`}
+                                >
                                     {result.name}    
                                 </Link>
                             </li>
                         ))
                     }
+                    
                 </ul>
             </div>
         </div>
