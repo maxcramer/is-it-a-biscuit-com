@@ -18,16 +18,17 @@ function Biscuit () {
         fetchData()
     }, [id])
 
-    if(biscuit) {
+    if(!biscuit) {
         return(
+            <h3>No Biscuit Found</h3>
+
+        ) 
+    } else {
+        return (   
             <div>
                 {biscuit.name}
                 {biscuit._id}
             </div>
-        ) 
-    } else {
-        return (   
-            <h3>No Biscuit Found</h3>
         )
     }
 }
