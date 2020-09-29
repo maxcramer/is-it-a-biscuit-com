@@ -12,8 +12,10 @@ function Biscuit () {
         const fetchData = async () => {
             const results = await getBiscuits();
             console.log('RESULTS', results)
+// THIS MATCH IS CAUSING THE ISSUE!! GETTING SOMEWHERE!
             const match = results.find(biscuit => biscuit._id === id );
             setBiscuit(match);
+
             console.log('MATCH:', match);
 
         }
