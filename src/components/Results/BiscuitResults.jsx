@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import { getBiscuits } from '../../services/firestoreService';
 
@@ -22,14 +22,18 @@ function Biscuit () {
 
     if(!biscuit) {
         return(
-            <div>No Biscuit Found</div>
+            <div></div>
 
         ) 
     } else {
         return (   
             <div>
-                {biscuit.name}
-                {biscuit.desc}
+                <h1>
+                    {biscuit.name}
+                </h1>
+                <p>
+                    {biscuit.desc}
+                </p>
             </div>
         )
     }

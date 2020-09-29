@@ -5,7 +5,7 @@ import BiscuitResults from './BiscuitResults';
 
 const BiscuitList = () => (
     <Switch>
-        <Route path='/biscuitList/:id' component={BiscuitResults} />
+        <Route path='/biscuitResults/:id' component={BiscuitResults} />
     </Switch>
 )
 
