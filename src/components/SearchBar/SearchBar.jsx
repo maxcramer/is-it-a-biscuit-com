@@ -17,7 +17,7 @@ function SearchBar() {
     }
 
     const onResultClick = () => {
-        console.log("running");
+        console.log("onResultClick running");
         setResults([]);
         searchInput.current.value = '';
     }

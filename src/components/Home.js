@@ -1,13 +1,17 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 import SearchBar from './SearchBar/SearchBar';
-import BiscuitResults from './Results/BiscuitResults';
+import BiscuitRoutes from './Results/BiscuitRoutes';
 
 function Home() {
     return(
-        <div>
+        <Router>
             <SearchBar />
-            <BiscuitResults />
-        </div>
+            <Switch>
+                <Route path="/biscuitResults" component={BiscuitRoutes} />
+            </Switch>
+        </Router>
     )
 }
 

@@ -10,18 +10,13 @@ function Biscuit () {
 
     useEffect(() => {
         const fetchData = async () => {
-            const results = await getBiscuits();
-            console.log('RESULTS', results)
-// THIS MATCH IS CAUSING THE ISSUE!! GETTING SOMEWHERE!
-            const match = results.find(biscuit => biscuit._id === id );
-            console.log('match: ', match)
-
-            setBiscuit(match);
-
-
+          const results = await getBiscuits();
+          const match = results.find(biscuit => biscuit._id === id);
+          console.log('match: ', match)
+          setBiscuit(match);
         }
         fetchData();
-    }, [id])
+      }, [id])
 
     if(!biscuit) {
         return(
