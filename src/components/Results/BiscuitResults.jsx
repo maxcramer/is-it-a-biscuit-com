@@ -12,11 +12,24 @@ function Biscuit () {
         const fetchData = async () => {
             const results = await getBiscuits();
             const match = results.find(biscuit => biscuit._id === id );
-            console.log(match);
+            console.log('MATCH:', match);
             setBiscuit(match);
         }
         fetchData()
     }, [id])
+
+    if(biscuit) {
+        return(
+            <div>
+                {biscuit.name}
+                {biscuit._id}
+            </div>
+        ) 
+    } else {
+        return (   
+            <h3>No Biscuit Found</h3>
+        )
+    }
 }
 
 
