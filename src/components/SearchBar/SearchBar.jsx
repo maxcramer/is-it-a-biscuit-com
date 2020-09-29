@@ -48,7 +48,7 @@ function SearchBar() {
                             <li key={result._id}>
                                 <Link 
                                 onClick={onResultClick} 
-                                to={`biscuitResults/${result._id}`}
+                                to={`/biscuitResults/${result._id}`}
                                 >
                                     {result.name}    
                                 </Link>

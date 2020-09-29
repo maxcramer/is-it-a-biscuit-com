@@ -11,23 +11,25 @@ function Biscuit () {
     useEffect(() => {
         const fetchData = async () => {
             const results = await getBiscuits();
+            console.log('RESULTS', results)
             const match = results.find(biscuit => biscuit._id === id );
-            console.log('MATCH:', match);
             setBiscuit(match);
+            console.log('MATCH:', match);
+
         }
-        fetchData()
+        fetchData();
     }, [id])
 
     if(!biscuit) {
         return(
-            <h3>No Biscuit Found</h3>
+            <div>No Biscuit Found</div>
 
         ) 
     } else {
         return (   
             <div>
                 {biscuit.name}
-                {biscuit._id}
+                {biscuit.desc}
             </div>
         )
     }
