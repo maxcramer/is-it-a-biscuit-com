@@ -3,8 +3,10 @@ import { Switch, Route } from 'react-router-dom';
 
 import BiscuitResults from './BiscuitResults';
 
-const BicsuitList = () => {
+const BicsuitList = () => (
     <Switch>
-        <Route path='BiscuitResults/._id' component={BiscuitResults} />
+        <Route path='BiscuitResults/:id' component={BiscuitResults} />
     </Switch>
-}
+)
+
+export default BicsuitList;
