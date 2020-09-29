@@ -14,9 +14,10 @@ function Biscuit () {
             console.log('RESULTS', results)
 // THIS MATCH IS CAUSING THE ISSUE!! GETTING SOMEWHERE!
             const match = results.find(biscuit => biscuit._id === id );
+            console.log('match: ', match)
+
             setBiscuit(match);
 
-            console.log('MATCH:', match);
 
         }
         fetchData();

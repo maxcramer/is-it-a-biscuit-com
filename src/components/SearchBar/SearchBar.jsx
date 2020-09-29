@@ -13,9 +13,11 @@ function SearchBar() {
         const biscuitResults = biscuits.filter(biscuit => biscuit.name.toLowerCase().includes(searchTerm.toLowerCase()));
         console.log('this is the biscuit results', biscuitResults);
         setResults([...biscuitResults]);
+        console.log(results);
     }
 
     const onResultClick = () => {
+        console.log("running");
         setResults([]);
         searchInput.current.value = '';
     }
