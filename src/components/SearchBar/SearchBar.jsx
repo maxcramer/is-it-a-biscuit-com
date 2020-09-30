@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import { getBiscuits } from '../../services/firestoreService';
 
+import './SearchBar.css';
+
 function SearchBar() {
     const [biscuits, setBiscuits] = useState([]);
     const [results, setResults] = useState([]);
@@ -39,13 +41,14 @@ function SearchBar() {
     return (
         <div>
             <input 
+                id="search_bar"
                 type="text"
                 placeholder="Search Biscuits"
                 ref={searchInput}
                 onChange={filterResults}
             />
             <div>
-                <ul>
+                <ul id="search_list">
                     {results.map(result => (
                             <li key={result._id}>
                                 <Link 

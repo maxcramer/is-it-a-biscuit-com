@@ -1,0 +1,22 @@
+#search_list {
+    list-style: none;
+    padding-left: 0;
+    box-shadow: 0 2px 5px #d3d3d3;
+    margin: 0;
+}
+
+li {
+    padding: 5px;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+#search_bar {
+    height: 40px;
+    width: 240px;
+    font-size: 20px;
+    padding: 0px 4px;
+}
