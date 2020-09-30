@@ -6,12 +6,13 @@
 }
 
 li {
-    padding: 5px;
+    padding: 8px 5px;
     text-decoration: none;
 }
 
 a {
     text-decoration: none;
+    font-size: 20px;
 }
 
 #search_bar {
