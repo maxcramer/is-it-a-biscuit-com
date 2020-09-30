@@ -13,8 +13,8 @@ function Home() {
         <Router>
             <div id="home_container">
                 <img id="logo" src={IsItABiscuitLogo} alt="Logo"  />
-                <h1>Is It A Biscuit?</h1>
-                <h3>Search below to find out!</h3>
+                <h1 id="title">Is It A Biscuit?</h1>
+                <h3 id="subtitle">Search below to find out!</h3>
                 <SearchBar />
                 <Switch>
                     <Route path="/biscuitResults" component={BiscuitRoutes} />
