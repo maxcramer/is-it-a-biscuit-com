@@ -29,6 +29,13 @@ function Biscuit () {
                 <h1>
                     {biscuit.name}
                 </h1>
+                <h3>
+                    {biscuit.flavour}
+                </h3>
+                <h3>
+                    {biscuit.type}
+                </h3>
+
                 <p>
                     {biscuit.desc}
                 </p>
