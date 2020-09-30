@@ -12,7 +12,7 @@ function Home() {
     return(
         <Router>
             <div id="home_container">
-                <img src={IsItABiscuitLogo} alt="Logo" />
+                <img id="logo" src={IsItABiscuitLogo} alt="Logo"  />
                 <h1>Is It A Biscuit?</h1>
                 <h3>Search below to find out!</h3>
                 <SearchBar />
