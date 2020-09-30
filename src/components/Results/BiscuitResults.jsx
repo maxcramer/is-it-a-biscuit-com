@@ -29,6 +29,7 @@ function Biscuit () {
                 <h1>
                     {biscuit.name}
                 </h1>
+                <img src={biscuit.image} alt="biscuit_image"/>
                 <p>
                     {biscuit.desc}
                 </p>
