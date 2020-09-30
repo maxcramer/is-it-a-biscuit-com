@@ -47,7 +47,7 @@ function SearchBar() {
                 ref={searchInput}
                 onChange={filterResults}
             />
-            <div>
+            <div id="search_list_container">
                 <ul id="search_list">
                     {results.map(result => (
                             <li key={result._id}>

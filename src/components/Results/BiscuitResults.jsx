@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 
 import { getBiscuits } from '../../services/firestoreService';
 
+import './BiscuitResults.css';
+
 function Biscuit () {
     const [biscuit, setBiscuit] = useState(null);
     let { id } = useParams();
@@ -25,19 +27,21 @@ function Biscuit () {
         ) 
     } else {
         return (   
-            <div>
-                <h1>
+            <div id="result_container">
+                <h1 id="biscuit_name">
                     {biscuit.name}
                 </h1>
+                <div id="sub_tags">
+                    <h4>
+                        Flavour: {biscuit.flavour}
+                    </h4>
+                    <h4>
+                        Type: {biscuit.type}
+                    </h4>
+                </div>
                 <img src={biscuit.image} alt="biscuit_image"/>
-                <p>
+                <p id="description">
                     {biscuit.desc}
-                </p>
-                <p>
-                    {biscuit.flavour}
-                </p>
-                <p>
-                    {biscuit.type}
                 </p>
             </div>
         )
