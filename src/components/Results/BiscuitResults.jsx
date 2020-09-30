@@ -35,7 +35,6 @@ function Biscuit () {
                 <h3>
                     {biscuit.type}
                 </h3>
-
                 <p>
                     {biscuit.desc}
                 </p>
