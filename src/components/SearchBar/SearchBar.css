@@ -1,3 +1,24 @@
+#search_bar_container {
+    background-color: #223D9E;
+    padding: 1rem 0;
+}
+
+#search_bar {
+    width: 90%;
+    height: 50px;
+    font-size: 35px;
+    border-radius: 10px;
+    display: flex;
+    margin: auto;
+    padding: 0 20px;
+}
+#search_bar:focus{ 
+    outline: none; 
+}
+
+
+
+
 /* #search_list_container {
     z-index: 10;
     position: absolute;

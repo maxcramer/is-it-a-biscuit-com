@@ -40,13 +40,15 @@ function SearchBar() {
     }, []);
     return (
         <div>
+        <div id="search_bar_container">
             <input 
                 id="search_bar"
                 type="text"
-                placeholder="Search Biscuits"
+                placeholder="Search Biscuits..."
                 ref={searchInput}
                 onChange={filterResults}
             />
+            </div>
             <div id="search_list_container">
                 <ul id="search_list">
                     {results.map(result => (
