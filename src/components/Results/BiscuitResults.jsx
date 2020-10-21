@@ -22,7 +22,7 @@ function Biscuit () {
 
     if(!biscuit) {
         return(
-            <div></div>
+            // <div>No</div> THIS FLASHES UP BEFORE THE DATA LOADS, WRITTEN WRONG, THINK ABOUT THIS 
 
         ) 
     } else {
