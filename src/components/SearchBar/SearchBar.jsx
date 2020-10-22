@@ -52,12 +52,18 @@ function SearchBar() {
             <div id="search_list_container">
                 <ul id="search_list">
                     {results.map(result => (
-                            <li key={result._id}>
+                            <li id="result_width" key={result._id}>
                                 <Link 
+                                id="result_item"
                                 onClick={onResultClick} 
                                 to={`/biscuitResults/${result._id}`}
                                 >
-                                    {result.name}    
+                                    <img id="image" src={result.image} alt=""/>
+                                    <div id="results_info">
+                                        <p>Name: {result.name} </p>
+                                        <p>Flavour: {result.flavour}</p>
+                                        <p>Type: {result.type}</p>
+                                    </div>
                                 </Link>
                             </li>
                         ))
