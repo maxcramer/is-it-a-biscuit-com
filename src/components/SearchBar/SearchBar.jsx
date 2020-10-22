@@ -60,9 +60,9 @@ function SearchBar() {
                                 >
                                     <img id="image" src={result.image} alt=""/>
                                     <div id="results_info">
-                                        <p>Name: {result.name} </p>
-                                        <p>Flavour: {result.flavour}</p>
-                                        <p>Type: {result.type}</p>
+                                        <p className="results_info_item">Name: {result.name} </p>
+                                        <p className="results_info_item">Flavour: {result.flavour}</p>
+                                        <p className="results_info_item">Type: {result.type}</p>
                                     </div>
                                 </Link>
                             </li>

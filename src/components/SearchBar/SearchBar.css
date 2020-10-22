@@ -25,18 +25,40 @@
 
 #result_width {
     width: 29%;
-    margin: 2%;
+    margin: 1%;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    border-left: 4px solid lightgray;
+    border-bottom: 4px solid lightgray;
+    display: inline-grid;
+}
+
+#result_width:hover {
+    border-right: 4px solid lightgray;
+    border-top: 4px solid lightgray;
+    border-left: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
 }
 
 #result_item {
     display: flex;
     flex-direction: row;
+    text-decoration: none;
 }
 
 #results_info {
     display: flex;
     flex-direction: column;
     width: 50%;
+    text-decoration: none;
+    margin: 0 5px;
+    color: black;
+    justify-content: center;
+    font-size: 15px;
+}
+
+.results_info_item {
+    margin: 5px 0;
 }
 
 #image {
@@ -44,7 +66,7 @@
     height: auto;
     display: flex;
     align-self: center;
-    margin-right: 15px;
+    margin: 15px;
 }
 
 
