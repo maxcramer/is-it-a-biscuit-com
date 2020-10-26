@@ -1,3 +1,10 @@
+#result_container {
+    position: absolute;
+    z-index: 1;
+    margin-top: 15px;
+}
+
+
 /* #result_container {
     max-width: 360px;
     display: flex;

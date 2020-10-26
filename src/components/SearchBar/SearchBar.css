@@ -16,6 +16,13 @@
     outline: none; 
 }
 
+#search_list_container {
+    width: 100%;
+    position: absolute;
+    z-index: 50;
+    background: white;
+}
+
 #search_list {
     list-style: none;
     display: flex;
