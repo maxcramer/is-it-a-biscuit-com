@@ -17,10 +17,15 @@
 }
 
 #search_list_container {
-    width: 100%;
-    position: absolute;
+    width: 92%;
     z-index: 50;
     background: white;
+    margin: auto;
+    border: 1px solid #d3d3d3;
+    /* display: flex; */
+    border-top: none;
+    box-shadow: 0 2px 5px #d3d3d3;
+    margin-top: -17px;
 }
 
 #search_list {
@@ -29,6 +34,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     margin: 0;
+    width: 100%;
 }
 
 #result_width {
