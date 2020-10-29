@@ -28,6 +28,7 @@ function Biscuit () {
     } else {
         return (   
             <div id="result_container">
+                <img src={biscuit.image} alt="biscuit_image"/>
                 <h1 id="biscuit_name">
                     {biscuit.name}
                 </h1>
@@ -39,7 +40,6 @@ function Biscuit () {
                         Type: {biscuit.type}
                     </h4>
                 </div>
-                <img src={biscuit.image} alt="biscuit_image"/>
                 <p id="description">
                     {biscuit.desc}
                 </p>
