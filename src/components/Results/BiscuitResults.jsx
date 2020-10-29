@@ -29,7 +29,6 @@ function Biscuit () {
         return (   
             <div id="result_container">
                 <div className="top_container">
-                <img src={biscuit.image} alt="biscuit_image"/>
                 <div className="sub_top_container">
                 <h1 id="biscuit_name">
                     {biscuit.name}
@@ -43,10 +42,14 @@ function Biscuit () {
                     </h4>
                 </div>
                 </div>
-                </div>
+                <img src={biscuit.image} alt="biscuit_image"/>
                 <p id="description">
                     {biscuit.desc}
                 </p>
+                </div>
+                {/* <p id="description">
+                    {biscuit.desc}
+                </p> */}
             </div>
         )
     }

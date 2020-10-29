@@ -1,34 +1,45 @@
 #result_container {
     position: relative;
     z-index: 1;
-    width: 90%;
+    width: 50%;
     margin: auto;
     padding: 4rem 0;
 }
 
-.top_container {
-    display: flex;
-    flex-direction: row;
-}
-
 .top_container img {
-    width: 20%;
+    float: left;
+    margin: 0 20px 20px 0;
+    width: 35%;
 }
 
 .sub_top_container {
     display: flex;
     flex-direction: column;
-    padding-left: 30px;
+    padding: 0 30px 1.5rem 0;
+    width: 500px
 }
 
 #biscuit_name {
     margin: 0;
+    text-decoration: underline;
+}
+
+#sub_tags {
+    display: flex;
+    flex-direction: row;
 }
 
 #sub_tags h4 {
     margin: 5px 0;
+    padding-right: 3rem;
+    font-size: 20px;
 }
 
+#description {
+    text-align: justify;
+    /* text-indent: 2em; */
+
+}
 
 
 /* #result_container {
