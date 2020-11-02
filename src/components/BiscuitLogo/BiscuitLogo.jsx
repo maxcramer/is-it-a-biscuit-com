@@ -5,7 +5,7 @@ import './BiscuitLogo.css';
 
 function BiscuitLogo () {
     return (
-        <div>
+        <div id="home_page">
             <h1>Is It A Biscuit?</h1>
             <h3>Search above to find out!</h3>
             <img src={IsItABiscuitLogo} alt=""/>
