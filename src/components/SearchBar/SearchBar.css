@@ -1,6 +1,6 @@
 #search_bar_container {
     background-color: #223D9E;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     display: flex;
     flex-direction: row;
     max-height: 5rem;
@@ -9,15 +9,15 @@
 
 #search_bar_container a {
     width: 8%;
-    margin: 0px 0px 0px 3%;
+    margin: 0px -40px 0px 3%;
 }
 
 #search_bar_container img {
-    width: 100%;
+    width: 80%;
 }
 
 #search_bar {
-    width: 75%;
+    width: 80%;
     height: 50px;
     font-size: 35px;
     border-radius: 10px;
