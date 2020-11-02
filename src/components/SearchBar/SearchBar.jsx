@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import { getBiscuits } from '../../services/firestoreService';
 
+import IsItABiscuitLogo from '../../images/IsItABiscuitLogo.png';
+
 import './SearchBar.css';
 
 function SearchBar() {
@@ -41,6 +43,9 @@ function SearchBar() {
     return (
         <div>
         <div id="search_bar_container">
+            <a href="/">
+                <img src={IsItABiscuitLogo} alt=""/>
+            </a>
             <input 
                 id="search_bar"
                 type="text"
