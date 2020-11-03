@@ -11,7 +11,7 @@ function SearchBar() {
     const [biscuits, setBiscuits] = useState([]);
     const [results, setResults] = useState([]);
     const searchInput = createRef();
-
+    let noBiscuit = null;
 
 
     const filterResults = () => {
@@ -28,7 +28,7 @@ function SearchBar() {
         searchInput.current.value = '';
     }
 
-    let noBiscuit = null;
+    // noBiscuit = null; Dont think I need this line of code 
     if(results.length === 0) {
         noBiscuit = <div>This is not a biscuit!</div>
         console.log('results are', results)
@@ -63,8 +63,8 @@ function SearchBar() {
             />
             </div>
             <div id="search_list_container">
-            {noBiscuit}
                 <ul id="search_list">
+                    {noBiscuit}
                     {results.map(result => (
                             <li id="result_width" key={result._id}>
                                 <Link 
