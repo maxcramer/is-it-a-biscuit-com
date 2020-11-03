@@ -12,6 +12,8 @@ function SearchBar() {
     const [results, setResults] = useState([]);
     const searchInput = createRef();
 
+
+
     const filterResults = () => {
         const searchTerm = searchInput.current.value;
         const biscuitResults = biscuits.filter(biscuit => biscuit.name.toLowerCase().includes(searchTerm.toLowerCase()));
@@ -24,6 +26,12 @@ function SearchBar() {
         console.log("onResultClick running");
         setResults([]);
         searchInput.current.value = '';
+    }
+
+    let noBiscuit = null;
+    if(results) {
+        noBiscuit = <div>This is not a biscuit!</div>
+        console.log('results are', results)
     }
 
     useEffect(() => {
@@ -56,6 +64,7 @@ function SearchBar() {
             </div>
             <div id="search_list_container">
                 <ul id="search_list">
+                    {noBiscuit}
                     {results.map(result => (
                             <li id="result_width" key={result._id}>
                                 <Link 
