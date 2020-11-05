@@ -12,6 +12,7 @@ function SearchBar() {
     const [results, setResults] = useState([]);
     const searchInput = createRef();
     let noBiscuit = null;
+    let noResults = null;
 
 
     const filterResults = () => {
@@ -28,11 +29,16 @@ function SearchBar() {
         searchInput.current.value = '';
     }
 
-    // noBiscuit = null; Dont think I need this line of code 
-    if(results.length === 0) {
-        noBiscuit = <div>This is not a biscuit!</div>
+    // noBiscuit = null; Don't think I need this line of code 
+    if(results.length < 1) {   
+        noBiscuit = <div id="noBiscuit">This is not a biscuit!</div>
         console.log('results are', results)
     }
+
+    // if(!results) {
+    //     noResults =  <div>No Result</div>;
+    //     console.log('there are no results')
+    // }
 
     useEffect(() => {
 
@@ -65,6 +71,7 @@ function SearchBar() {
             <div id="search_list_container">
                 <ul id="search_list">
                     {noBiscuit}
+                    {noResults}
                     {results.map(result => (
                             <li id="result_width" key={result._id}>
                                 <Link 
