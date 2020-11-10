@@ -11,7 +11,7 @@ function SearchBar() {
     const [biscuits, setBiscuits] = useState([]);
     const [results, setResults] = useState([]);
     const searchInput = createRef();
-    let noBiscuit = null;
+    let noBiscuit = useState();
     let noResults = null;
 
 
