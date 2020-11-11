@@ -21,10 +21,10 @@ function SearchBar() {
         console.log('this is the biscuit results', biscuitResults);
         setResults([...biscuitResults]);
         console.log(results);
-        if(biscuitResults < 1) {  
-            noBiscuit = <div id="noBiscuit"><h2>This is not a biscuit!</h2></div>
-            console.log("if statement running", searchTerm.length);
-        }
+        // if(biscuitResults < 1) {  
+        //     noBiscuit = <div id="noBiscuit"><h2>This is not a biscuit!</h2></div>
+        //     console.log("if statement running", searchTerm.length);
+        // }
     }
 
     const onResultClick = () => {
@@ -49,6 +49,10 @@ function SearchBar() {
     //     noResults =  <div>No Result</div>;
     //     console.log('there are no results')
     // }
+    if((results.length < 1) && (searchInput >= 1 )) {
+        console.log("results length")
+        noBiscuit = <div>This aint no biccy wiccy</div>
+    }
 
     useEffect(() => {
 
@@ -64,6 +68,7 @@ function SearchBar() {
         loadData();
         setResults([]);
     }, []);
+
     return (
         <div>
         <div id="search_bar_container">
