@@ -21,7 +21,8 @@ function SearchBar() {
         console.log('this is the biscuit results', biscuitResults);
         setResults([...biscuitResults]);
         console.log(results);
-        // if(biscuitResults < 1) {  
+        console.log(searchTerm.length) 
+        // if((searchTerm.length < 1) && (biscuitResults.length < 1)) {  
         //     noBiscuit = <div id="noBiscuit"><h2>This is not a biscuit!</h2></div>
         //     console.log("if statement running", searchTerm.length);
         // }
@@ -49,10 +50,15 @@ function SearchBar() {
     //     noResults =  <div>No Result</div>;
     //     console.log('there are no results')
     // }
-    if((results.length < 1) && (searchInput >= 1 )) {
+    if(results.length === 0) {
         console.log("results length")
         noBiscuit = <div>This aint no biccy wiccy</div>
     }
+   
+    // ERROR: Cannot read property 'value' of null, fucking why?
+    // if(searchInput.current.length > 1) {
+    //     console.log("IF INPUT VALUE GREATER THAN 1")
+    // }
 
     useEffect(() => {
 
