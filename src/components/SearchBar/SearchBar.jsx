@@ -11,8 +11,8 @@ function SearchBar() {
     const [biscuits, setBiscuits] = useState([]);
     const [results, setResults] = useState([]);
     const searchInput = createRef();
-    let noBiscuit = useState();
-    let noResults = null;
+    // let noBiscuit = useState();
+    let noBiscuit = null;
 
 
     const filterResults = () => {
@@ -21,6 +21,7 @@ function SearchBar() {
         console.log('this is the biscuit results', biscuitResults);
         setResults([...biscuitResults]);
         console.log(results);
+        checkResults();
     }
 
     const onResultClick = () => {
@@ -30,10 +31,16 @@ function SearchBar() {
     }
 
     // noBiscuit = null; Don't think I need this line of code 
-    if(results.length < 1) {   
-        noBiscuit = <div id="noBiscuit">This is not a biscuit!</div>
-        console.log('results are', results)
-    }
+
+    const checkResults = () => {
+        const searchTerm = searchInput.current.value;
+        console.log('check results', searchTerm);
+}
+
+    // if(results.length < 1 && searchTerm.length > 0 ) {   
+    //     noBiscuit = <div id="noBiscuit">This is not a biscuit!</div>
+    //     console.log('results are', results)
+    // }
 
     // if(!results) {
     //     noResults =  <div>No Result</div>;
@@ -71,7 +78,6 @@ function SearchBar() {
             <div id="search_list_container">
                 <ul id="search_list">
                     {noBiscuit}
-                    {noResults}
                     {results.map(result => (
                             <li id="result_width" key={result._id}>
                                 <Link 
