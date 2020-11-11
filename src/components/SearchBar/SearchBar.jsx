@@ -15,7 +15,7 @@ function SearchBar() {
     let noBiscuit = null;
 
 
-    const filterResults = (noBiscuit) => {
+    const filterResults = () => {
         const searchTerm = searchInput.current.value;
         const biscuitResults = biscuits.filter(biscuit => biscuit.name.toLowerCase().includes(searchTerm.toLowerCase()));
         console.log('this is the biscuit results', biscuitResults);
