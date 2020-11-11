@@ -15,13 +15,16 @@ function SearchBar() {
     let noBiscuit = null;
 
 
-    const filterResults = () => {
+    const filterResults = (noBiscuit) => {
         const searchTerm = searchInput.current.value;
         const biscuitResults = biscuits.filter(biscuit => biscuit.name.toLowerCase().includes(searchTerm.toLowerCase()));
         console.log('this is the biscuit results', biscuitResults);
         setResults([...biscuitResults]);
         console.log(results);
-        checkResults();
+        if(biscuitResults < 1) {  
+            noBiscuit = <div id="noBiscuit"><h2>This is not a biscuit!</h2></div>
+            console.log("if statement running", searchTerm.length);
+        }
     }
 
     const onResultClick = () => {
@@ -32,15 +35,15 @@ function SearchBar() {
 
     // noBiscuit = null; Don't think I need this line of code 
 
-    const checkResults = () => {
-        const searchTerm = searchInput.current.value;
-        console.log('check results', searchTerm);
-}
-
-    // if(results.length < 1 && searchTerm.length > 0 ) {   
-    //     noBiscuit = <div id="noBiscuit">This is not a biscuit!</div>
-    //     console.log('results are', results)
+    // const checkResults = () => {
+    //     const searchTerm = searchInput.current.value.length;
+    //      if(searchTerm > 0) {   
+    //         console.log("if statement running", searchTerm);
+    //         noBiscuit = <div id="noBiscuit"><h2>This is not a biscuit!</h2></div>
+    //     }
     // }
+
+   
 
     // if(!results) {
     //     noResults =  <div>No Result</div>;
@@ -77,7 +80,7 @@ function SearchBar() {
             </div>
             <div id="search_list_container">
                 <ul id="search_list">
-                    {noBiscuit}
+                {noBiscuit}
                     {results.map(result => (
                             <li id="result_width" key={result._id}>
                                 <Link 
