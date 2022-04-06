@@ -36,6 +36,7 @@ function SearchBar() {
         console.log("onResultClick running");
         setResults([]);
         searchInput.current.value = '';
+        
     }
 
     // noBiscuit = null; Don't think I need this line of code 
@@ -73,7 +74,7 @@ function SearchBar() {
     //     console.log("IF INPUT VALUE GREATER THAN 1")
     // }
 
-    useEffect(() => {
+    useEffect(() => { // THIS IS A REACT HOOK
 
         const fetchBiscuits = async () => {
             const biscuitResponse = await getBiscuits();
@@ -87,6 +88,8 @@ function SearchBar() {
         loadData();
         setResults([]);
     }, []);
+
+    console.log(biscuits);
 
     return (
         <div>
@@ -117,6 +120,7 @@ function SearchBar() {
                                         <p className="results_info_item">Name: {result.name} </p>
                                         <p className="results_info_item">Flavour: {result.flavour}</p>
                                         <p className="results_info_item">Type: {result.type}</p>
+                                        <p className="results_info_item">Is it a biscuit? {result.result}</p>
                                     </div>
                                 </Link>
                             </li>
