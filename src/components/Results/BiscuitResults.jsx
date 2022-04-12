@@ -34,12 +34,15 @@ function Biscuit () {
                     {biscuit.name}
                 </h1>
                 <div id="sub_tags">
-                    <h4>
-                        Flavour: {biscuit.flavour}
-                    </h4>
-                    <h4>
-                        Type: {biscuit.type}
-                    </h4>
+                    <div>
+                        <h4>Flavour:</h4>{"\n"}<h4>{biscuit.flavour}</h4>
+                    </div>
+                    <div>
+                        <h4>Type: </h4>{"\n"}<h4>{biscuit.type}</h4>
+                    </div>
+                    <div>
+                        <h4>Is it a Biscuit?</h4>{"\n"}<h4>{biscuit.result}</h4>
+                    </div>
                 </div>
                 </div>
                 <img src={biscuit.image} alt="biscuit_image"/>

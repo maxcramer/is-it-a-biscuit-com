@@ -18,12 +18,12 @@ function SearchBar() {
     const filterResults = () => {
         const searchTerm = searchInput.current.value;
         const biscuitResults = biscuits.filter(biscuit => biscuit.name.toLowerCase().includes(searchTerm.toLowerCase()));
-        console.log('this is the biscuit results', biscuitResults);
+        // console.log('this is the biscuit results', biscuitResults);
         setResults([...biscuitResults]);
-        console.log(results);
-        console.log(searchTerm.length) 
+        // console.log(results);
+        // console.log(searchTerm.length) 
         if(searchTerm.length >= 1) {
-            console.log("done it")
+            // console.log("done it")
             checkResults();
         }
         // if((searchTerm.length < 1) && (biscuitResults.length < 1)) {  
@@ -33,7 +33,7 @@ function SearchBar() {
     }
 
     const onResultClick = () => {
-        console.log("onResultClick running");
+        // console.log("onResultClick running");
         setResults([]);
         searchInput.current.value = '';
         
@@ -59,7 +59,7 @@ function SearchBar() {
     const checkResults = () => {
         if(results.length < 1) {
             noBiscuit = <div><p>This aint no biccy </p></div>
-            console.log("results length", results.length)
+            // console.log("results length", results.length)
         }
         return (
             noBiscuit
@@ -89,7 +89,7 @@ function SearchBar() {
         setResults([]);
     }, []);
 
-    console.log(biscuits);
+    // console.log(biscuits);
 
     return (
         <div>
@@ -115,12 +115,10 @@ function SearchBar() {
                                 onClick={onResultClick} 
                                 to={`/biscuitResults/${result._id}`}
                                 >
-                                    <img id="image" src={result.image} alt=""/>
                                     <div id="results_info">
-                                        <p className="results_info_item">Name: {result.name} </p>
-                                        <p className="results_info_item">Flavour: {result.flavour}</p>
-                                        <p className="results_info_item">Type: {result.type}</p>
-                                        <p className="results_info_item">Is it a biscuit? {result.result}</p>
+                                        <h2 className="results_info_item">{result.name} </h2>
+                                        <img id="image" src={result.image} alt=""/>
+
                                     </div>
                                 </Link>
                             </li>
